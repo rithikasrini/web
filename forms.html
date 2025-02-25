@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FORMS</title>
+        <style>
+            #center{
+                background-color: bisque;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <img src="image.jpg" alt="your logo" height="200px" width="1350">
+        </header>
+        <form id="center" name="Application form" method="post" enctype="multipart/form-data">
+                <fieldset><legend align="center">Sign In</legend>
+                <label for="name">Name</label>
+                <input type="text" placeholder="Enter Your Name" id="name" name="Name" value="" autofocus required><br><br>
+                <label for="age">Age</label>
+                <input type="number" placeholder="Enter Your Age" id="age" name="Age" value="" required><br><br>
+                <label for="date">Date Of Birth</label>
+                <input type="date" placeholder="Enter Your DOB" id="date" name="Date" value="" required><br><br>
+                <label for="email">Email</label>
+                <input type="email" placeholder="Enter your email id" id="email" name="Email" value="" required><br><br>
+                <label for="psw">Password</label>
+                <input type="password" placeholder="Enter Password" name="psw" required><br><br>
+                <label for="address">Address</label>
+                <textarea row="4" column="8" id="address" name="Address" value="" required></textarea><br><br>
+                <label for="number">Ph.number</label>
+                <input type="tel" placeholder="enter ur Ph.Number" id="number" name="Number" value="" required><br><br>
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select><br><br>
+                <label for="proof">Upload proof</label>
+                <input type="file" placeholder="">
+                <input type="submit" value="Submit">
+                <input type="reset" values="cancel">
+            </fieldset>
+        </form>
+    </body>
+</html>
