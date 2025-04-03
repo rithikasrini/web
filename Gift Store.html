@@ -1,46 +1,101 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Gift store</title>
+        <title>Gift Store</title>
         <style>
+            body {
+                background-color: bisque;
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }
             header {
-            background-color:bisque;
-            color:black;
-            padding: 10px;
-            text-align: center;
-            text-decoration:underline;
-            text-decoration-color: black;
-        }
-        .column {
-	  float: left;
-	  width: 30%;
-	  padding: 5px;
-	}
+                background-color: bisque;
+                padding: 10px;
+                text-decoration: underline;
+            }
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                padding: 20px;
+            }
+            .column {
+                background: white;
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+                width: 300px;
+                text-align: center;
+            }
+            .quantity {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 10px;
+            }
+            .quantity button {
+                font-size: 18px;
+                width: 30px;
+                height: 30px;
+                margin: 5px;
+                cursor: pointer;
+            }
+            .quantity input {
+                width: 40px;
+                text-align: center;
+                font-size: 18px;
+                border: none;
+            }
         </style>
+        <script>
+            function changeQuantity(id, value) {
+                let qtyInput = document.getElementById(id);
+                let newValue = parseInt(qtyInput.value) + value;
+                if (newValue >= 0) {
+                    qtyInput.value = newValue;
+                }
+            }
+        </script>
     </head>
-    <body bgcolor="bisque">
-        <marquee style="font-size: 20px;" direction="right" behaviour="slide">ENJOY THE GIFTS </marquee>
+    <body>
+        <marquee style="font-size: 20px;" direction="right" behavior="slide">ENJOY THE GIFTS</marquee>
         <header>
-            <img src="image.jpg" alt="your logo" height="200px" width="1350">
+            <img src="image.jpg" alt="Your Logo" height="200px" width="100%">
             <h1 style="font-size:40px;">GIFT STORE</h1>
         </header>
         <hr color="black">
         <div class="container">
             <div class="column">
-        <img src="gift1.jpg" alt="your logo" height="300" width="300">
-        <p style="font-size :20px;">Unwind Favorites Gift Box - Set of 5</p>
-        <p style="font-size :20px;">rupees 995</p>
+                <img src="gift1.jpg" alt="Unwind Favorites Gift Box" height="300" width="300">
+                <p style="font-size:20px;">Unwind Favorites Gift Box - Set of 5</p>
+                <p style="font-size:20px;">₹995</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('qty1', -1)">-</button>
+                    <input type="text" id="qty1" value="0" readonly>
+                    <button onclick="changeQuantity('qty1', 1)">+</button>
+                </div>
+            </div>
+            <div class="column">
+                <img src="gift2.jpg" alt="Me-Time Favorites Gift Box" height="300" width="300">
+                <p style="font-size:20px;">Me-Time Favorites Gift Box - Set of 6</p>
+                <p style="font-size:20px;">₹1,295</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('qty2', -1)">-</button>
+                    <input type="text" id="qty2" value="0" readonly>
+                    <button onclick="changeQuantity('qty2', 1)">+</button>
+                </div>
+            </div>
+            <div class="column">
+                <img src="gift3.jpg" alt="All things Cute Gift Box" height="300" width="300">
+                <p style="font-size:20px;">All things Cute Gift Box - Set of 6</p>
+                <p style="font-size:20px;">₹1,495</p>
+                <div class="quantity">
+                    <button onclick="changeQuantity('qty3', -1)">-</button>
+                    <input type="text" id="qty3" value="0" readonly>
+                    <button onclick="changeQuantity('qty3', 1)">+</button>
+                </div>
+            </div>
         </div>
-        <div class="column">
-        <img src="gift2.jpg" alt="your logo" height="300" width="300">
-        <p style="font-size :20px;">Me-Time Favorites Gift Box - Set of 6</p>
-        <p style="font-size :20px;">rupees 1,295 </p>
-        </div>
-        <div class="column">
-        <img src="gift3.jpg" alt="your logo" height="300" width="300">
-        <p style="font-size :20px;">All things Cute Gift Box - Set of 6</p>
-        <p style="font-size :20px;">rupees 1,495</p>
-        </div>
-    </div>
     </body>
 </html>
